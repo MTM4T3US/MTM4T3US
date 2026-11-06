@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 34" width="1000" height="34" role="img" aria-label="divisor binário">
+<defs>
+  <linearGradient id="edge" x1="0" x2="1">
+    <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+    <stop offset=".12" stop-color="#fff" stop-opacity="1"/>
+    <stop offset=".88" stop-color="#fff" stop-opacity="1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </linearGradient>
+  <mask id="m"><rect width="1000" height="34" fill="url(#edge)"/></mask>
+</defs>
+<style>
+  text { font-family: 'Courier New', Courier, monospace; }
+  .s { animation: slide 30s linear infinite; }
+  @keyframes slide { from { transform: translateX(0); } to { transform: translateX(-1344.0px); } }
+</style>
+<g mask="url(#m)">
+  <line x1="0" y1="4" x2="1000" y2="4" stroke="#00ff41" stroke-opacity=".5"/>
+  <line x1="0" y1="30" x2="1000" y2="30" stroke="#00ff41" stroke-opacity=".5"/>
+  <g class="s">
+    <text x="0" y="22" font-size="14" fill="#00ff41" fill-opacity=".8" textLength="1344.0" lengthAdjust="spacingAndGlyphs">1111001110111111011011100110000011110110110000010111100100110011011101000010010001000101000011101100011000101111000101010010010111110000001000100110011110111011</text>
+    <text x="1344.0" y="22" font-size="14" fill="#00ff41" fill-opacity=".8" textLength="1344.0" lengthAdjust="spacingAndGlyphs">1111001110111111011011100110000011110110110000010111100100110011011101000010010001000101000011101100011000101111000101010010010111110000001000100110011110111011</text>
+  </g>
+</g>
+</svg>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 190" width="400" height="190" role="img" aria-label="Projeto fazendas_crud: AgroVoo: monitoramento agrícola com drones, missões e relatórios.">
+<defs>
+  <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowS" x="-20%" y="-50%" width="140%" height="200%">
+    <feGaussianBlur stdDeviation="1.6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="sweep" x1="0" x2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#00ff41" stop-opacity=".12"/>
+    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  </linearGradient>
+  <clipPath id="round"><rect width="400" height="190" rx="10"/></clipPath>
+</defs>
+<style>
+  text { font-family: 'Courier New', Courier, monospace; }
+  .t { font-family: Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; font-weight: 700; }
+  .sw { animation: sw 4.5s ease-in-out infinite; }
+  @keyframes sw { from { transform: translateX(-160px); } to { transform: translateX(440px); } }
+  .blink { animation: blink 1.2s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+<g clip-path="url(#round)">
+  <rect width="400" height="190" fill="#020a04"/>
+  <rect class="sw" x="0" y="0" width="140" height="190" fill="url(#sweep)" transform="skewX(-20)"/>
+  <text x="20" y="30" font-size="12" fill="#006b1b">~/projetos/</text>
+  <text x="380" y="30" font-size="12" fill="#006b1b" text-anchor="end">0011110100</text>
+  <text class="t" x="20" y="60" font-size="21" fill="#00ff41" filter="url(#glowS)">fazendas_crud</text>
+  <rect class="blink" x="190" y="44" width="10" height="20" fill="#00ff41"/>
+  <text x="20" y="96" font-size="15" fill="#a8ffbf">AgroVoo: monitoramento agrícola</text><text x="20" y="118" font-size="15" fill="#a8ffbf">com drones, missões e relatórios.</text>
+  <rect x="20.0" y="146" width="64.8" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="52.4" y="162" font-size="13" fill="#00ff41" text-anchor="middle">Python</text><rect x="92.8" y="146" width="57.0" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="121.3" y="162" font-size="13" fill="#00ff41" text-anchor="middle">Flask</text><rect x="157.8" y="146" width="57.0" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="186.3" y="162" font-size="13" fill="#00ff41" text-anchor="middle">MySQL</text><rect x="222.8" y="146" width="33.6" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="239.6" y="162" font-size="13" fill="#00ff41" text-anchor="middle">JS</text>
+</g>
+<rect x="1" y="1" width="398" height="188" rx="9" fill="none" stroke="#00ff41" stroke-opacity=".55" stroke-width="2"/>
+</svg>

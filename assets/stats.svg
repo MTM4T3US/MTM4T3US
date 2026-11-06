@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" width="620" height="120" role="img" aria-label="Estatísticas sendo geradas">
+<style>text{font-family:'Courier New',Courier,monospace}.b{animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}</style>
+<rect x="1" y="1" width="618" height="118" rx="11" fill="#020a04" stroke="#00ff41" stroke-opacity=".55" stroke-width="2"/>
+<text x="26" y="52" font-size="17" fill="#00ff41" font-weight="700">$ <tspan fill="#e6ffec" font-weight="400">./stats --user MTM4T3US</tspan></text>
+<text x="46" y="84" font-size="17" fill="#a8ffbf">compilando estatísticas...</text>
+<rect class="b" x="312" y="70" width="10" height="19" fill="#00ff41"/>
+</svg>

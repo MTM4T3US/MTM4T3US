@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 474" width="620" height="474" role="img" aria-label="Terminal: Mateus Ferreira, 18 anos, Itumbiara - GO. 3º ano do Ensino Médio e Técnico em Desenvolvimento de Sistemas. Foco em Engenharia de Software e Cyber Segurança.">
+<defs>
+  <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowS" x="-20%" y="-50%" width="140%" height="200%">
+    <feGaussianBlur stdDeviation="1.6" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#00ff41" stop-opacity=".07"/>
+    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".3"/></pattern>
+  <clipPath id="round"><rect width="620" height="474" rx="12"/></clipPath>
+</defs>
+<style>
+  text { font-family: 'Courier New', Courier, monospace; }
+  .show { opacity: 0; animation: appear .01s linear forwards; }
+  @keyframes appear { to { opacity: 1; } }
+  .cur { opacity: 0; }
+  @keyframes on { from { opacity: 1; } to { opacity: 1; } }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .scanbar { animation: scan 7s linear infinite; }
+  @keyframes scan { from { transform: translateY(-100px); } to { transform: translateY(474px); } }
+  @keyframes k0 { from { transform: translateX(0); } to { transform: translateX(75.6px); } } @keyframes k3 { from { transform: translateX(0); } to { transform: translateX(172.8px); } } @keyframes k6 { from { transform: translateX(0); } to { transform: translateX(140.4px); } } @keyframes k9 { from { transform: translateX(0); } to { transform: translateX(118.8px); } }
+</style>
+<g clip-path="url(#round)">
+  <rect width="620" height="474" fill="#020a04"/>
+  <rect width="620" height="38" fill="#0b1a0f"/>
+  <line x1="0" y1="38" x2="620" y2="38" stroke="#00ff41" stroke-opacity=".35"/>
+  <circle cx="22" cy="19" r="6" fill="#00ff41"/>
+  <circle cx="42" cy="19" r="6" fill="#00b82e"/>
+  <circle cx="62" cy="19" r="6" fill="#006b1b"/>
+  <text x="310.0" y="24" font-size="14" fill="#00b82e" text-anchor="middle">mateus@itumbiara: ~</text>
+  <text x="26" y="74" font-size="18" fill="#00ff41" font-weight="700">$</text><text x="47.6" y="74" font-size="18" fill="#e6ffec" textLength="64.8" lengthAdjust="spacingAndGlyphs">whoami</text><rect style="animation:k0 0.33s steps(6) 0.60s forwards" x="46.6" y="56" width="79.6" height="26" fill="#020a04"/><rect class="cur" style="animation:k0 0.33s steps(6) 0.60s forwards, on 0.58s linear 0.60s" x="47.6" y="59" width="10.8" height="20" fill="#00ff41"/><text class="show" style="animation-delay:1.28s" x="47.6" y="104" font-size="18" fill="#a8ffbf">Mateus Ferreira · 18 anos</text><text class="show" style="animation-delay:1.46s" x="47.6" y="134" font-size="18" fill="#a8ffbf">Itumbiara - GO, Brasil</text><text x="26" y="164" font-size="18" fill="#00ff41" font-weight="700">$</text><text x="47.6" y="164" font-size="18" fill="#e6ffec" textLength="162.0" lengthAdjust="spacingAndGlyphs">cat estudos.txt</text><rect style="animation:k3 0.82s steps(15) 2.09s forwards" x="46.6" y="146" width="176.8" height="26" fill="#020a04"/><rect class="cur" style="animation:k3 0.82s steps(15) 2.09s forwards, on 1.07s linear 2.09s" x="47.6" y="149" width="10.8" height="20" fill="#00ff41"/><text class="show" style="animation-delay:3.26s" x="47.6" y="194" font-size="18" fill="#a8ffbf">3º ano do Ensino Médio</text><text class="show" style="animation-delay:3.44s" x="47.6" y="224" font-size="18" fill="#a8ffbf">Técnico em Desenvolvimento de Sistemas</text><text x="26" y="254" font-size="18" fill="#00ff41" font-weight="700">$</text><text x="47.6" y="254" font-size="18" fill="#e6ffec" textLength="129.6" lengthAdjust="spacingAndGlyphs">cat foco.txt</text><rect style="animation:k6 0.66s steps(12) 4.08s forwards" x="46.6" y="236" width="144.4" height="26" fill="#020a04"/><rect class="cur" style="animation:k6 0.66s steps(12) 4.08s forwards, on 0.91s linear 4.08s" x="47.6" y="239" width="10.8" height="20" fill="#00ff41"/><text class="show" style="animation-delay:5.08s" x="47.6" y="284" font-size="18" fill="#00ff41">[&gt;] Engenharia de Software</text><text class="show" style="animation-delay:5.26s" x="47.6" y="314" font-size="18" fill="#00ff41">[&gt;] Cyber Segurança</text><text x="26" y="344" font-size="18" fill="#00ff41" font-weight="700">$</text><text x="47.6" y="344" font-size="18" fill="#e6ffec" textLength="108.0" lengthAdjust="spacingAndGlyphs">ls ~/stack</text><rect style="animation:k9 0.55s steps(10) 5.89s forwards" x="46.6" y="326" width="122.8" height="26" fill="#020a04"/><rect class="cur" style="animation:k9 0.55s steps(10) 5.89s forwards, on 0.80s linear 5.89s" x="47.6" y="329" width="10.8" height="20" fill="#00ff41"/><text class="show" style="animation-delay:6.79s" x="47.6" y="374" font-size="18" fill="#a8ffbf">python  html  css  php  sql</text><text class="show" style="animation-delay:6.97s" x="47.6" y="404" font-size="18" fill="#a8ffbf">c++  c#  javascript</text><text x="26" y="434" font-size="18" fill="#00ff41" font-weight="700">$</text><g class="show" style="animation-delay:7.60s"><rect class="blink" x="47.6" y="419" width="10.8" height="20" fill="#00ff41"/></g>
+  <rect class="scanbar" width="620" height="100" fill="url(#scan)"/>
+  <rect width="620" height="474" fill="url(#lines)"/>
+</g>
+<rect x="1" y="1" width="618" height="472" rx="11" fill="none" stroke="#00ff41" stroke-opacity=".55" stroke-width="2"/>
+</svg>

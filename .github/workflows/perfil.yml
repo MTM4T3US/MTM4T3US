@@ -1,0 +1,52 @@
+name: atualizar-perfil
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # todo dia (06:17 em Brasília)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore: [assets/stats.svg]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-perfil
+  cancel-in-progress: true
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gerar a cobrinha do gráfico de contribuições
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?palette=github-dark&color_snake=#00ff41&color_dots=#0d1f12,#003b0f,#006b1b,#00b82e,#00ff41
+      - name: Publicar na branch output
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Gerar assets/stats.svg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/stats.py "${{ github.repository_owner }}" assets/stats.svg
+      - name: Salvar no repositório
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/stats.svg
+          git diff --cached --quiet || (git commit -m "chore: atualiza estatísticas" && git push)
