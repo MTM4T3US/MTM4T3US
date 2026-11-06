@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 150" width="1000" height="150" role="img" aria-label="Conexão encerrada. Obrigado pela visita!"><defs>
+  <radialGradient id="bgg" cx="50%" cy="35%" r="80%">
+    <stop offset="0" stop-color="#005c25"/>
+    <stop offset=".5" stop-color="#002a11"/>
+    <stop offset="1" stop-color="#000f06"/>
+  </radialGradient>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0H0V22" fill="none" stroke="#00ff41" stroke-opacity=".08"/>
+  </pattern>
+  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse">
+    <rect width="3" height="1" fill="#000" fill-opacity=".22"/>
+  </pattern>
+  <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#00ff41" stop-opacity=".09"/>
+    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowS" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="1.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="round"><rect width="1000" height="150" rx="14"/></clipPath></defs><style>
+  text { font-family: 'Courier New', Courier, monospace; }
+  .b { font-family: Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; font-weight: 700; }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .scanbar { animation: scan 7s linear infinite; }
+  @keyframes scan { from { transform: translateY(-120px); } to { transform: translateY(150px); } }
+  .run { animation: run 6s linear infinite; }
+  @keyframes run { to { stroke-dashoffset: -2300; } }
+  .spin { transform-box: fill-box; transform-origin: center; animation: spin 8s linear infinite; }
+  .spinr { transform-box: fill-box; transform-origin: center; animation: spin 5s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .show { opacity: 0; animation: appear .2s ease-out forwards; }
+  @keyframes appear { to { opacity: 1; } }
+  .type { animation: type 8s infinite; }
+  @keyframes type {
+    0% { transform: translateX(0); animation-timing-function: steps(41); }
+    45% { transform: translateX(590.4px); animation-timing-function: linear; }
+    100% { transform: translateX(590.4px); }
+  }</style>
+<g clip-path="url(#round)">
+  <rect width="1000" height="150" fill="url(#bgg)"/><rect width="1000" height="150" fill="url(#grid)"/>
+  <rect x="180.8" y="38" width="650.4" height="46" rx="8" fill="#00150a" stroke="#00ff41" stroke-opacity=".5"/>
+  <text x="204.8" y="69" font-size="24" fill="#00ff41" textLength="590.4" lengthAdjust="spacingAndGlyphs" filter="url(#glowS)">&gt; conexão encerrada. obrigado pela visita</text>
+  <g class="type">
+    <rect x="204.8" y="46" width="594.4" height="32" fill="#00150a"/>
+    <rect class="blink" x="205.8" y="50" width="12.4" height="24" fill="#00ff41"/>
+  </g>
+  <text x="500.0" y="118" font-size="14" fill="#3ddc6a" text-anchor="middle" letter-spacing="1">01001101 01000001 01010100 01000101 01010101 01010011</text>
+  <rect class="scanbar" width="1000" height="120" fill="url(#scan)"/><rect width="1000" height="150" fill="url(#lines)"/>
+</g>
+<rect x="1" y="1" width="998" height="148" rx="13" fill="none" stroke="#00ff41" stroke-opacity=".45" stroke-width="2"/><rect class="run" x="1" y="1" width="998" height="148" rx="13" fill="none" stroke="#00ff41" stroke-width="3" stroke-dasharray="140 2160" filter="url(#glowS)"/>
+</svg>

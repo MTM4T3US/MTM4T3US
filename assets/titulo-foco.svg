@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 64" width="640" height="64" role="img" aria-label="foco"><defs>
+  <radialGradient id="bgg" cx="50%" cy="35%" r="80%">
+    <stop offset="0" stop-color="#005c25"/>
+    <stop offset=".5" stop-color="#002a11"/>
+    <stop offset="1" stop-color="#000f06"/>
+  </radialGradient>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0H0V22" fill="none" stroke="#00ff41" stroke-opacity=".08"/>
+  </pattern>
+  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse">
+    <rect width="3" height="1" fill="#000" fill-opacity=".22"/>
+  </pattern>
+  <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#00ff41" stop-opacity=".09"/>
+    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="3" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowS" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="1.5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="round"><rect width="640" height="64" rx="14"/></clipPath></defs><style>
+  text { font-family: 'Courier New', Courier, monospace; }
+  .b { font-family: Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; font-weight: 700; }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .scanbar { animation: scan 7s linear infinite; }
+  @keyframes scan { from { transform: translateY(-120px); } to { transform: translateY(64px); } }
+  .run { animation: run 6s linear infinite; }
+  @keyframes run { to { stroke-dashoffset: -1408; } }
+  .spin { transform-box: fill-box; transform-origin: center; animation: spin 8s linear infinite; }
+  .spinr { transform-box: fill-box; transform-origin: center; animation: spin 5s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .show { opacity: 0; animation: appear .2s ease-out forwards; }
+  @keyframes appear { to { opacity: 1; } }</style>
+<g clip-path="url(#round)">
+  <rect width="640" height="64" fill="url(#bgg)"/><rect width="640" height="64" fill="url(#grid)"/>
+  <rect x="0" y="0" width="7" height="64" fill="#00ff41" filter="url(#glowS)"/>
+  <text class="b" x="30" y="42" font-size="28" fill="#00ff41" filter="url(#glowS)" textLength="100.8" lengthAdjust="spacingAndGlyphs">&gt; foco</text>
+  <rect class="blink" x="136.8" y="20" width="14.8" height="26" fill="#00ff41"/>
+  <text x="620" y="39" font-size="14" fill="#3ddc6a" text-anchor="end">[ 02 ]</text>
+  <rect class="scanbar" width="640" height="120" fill="url(#scan)"/><rect width="640" height="64" fill="url(#lines)"/>
+</g>
+<rect x="1" y="1" width="638" height="62" rx="11" fill="none" stroke="#00ff41" stroke-opacity=".45" stroke-width="2"/><rect class="run" x="1" y="1" width="638" height="62" rx="11" fill="none" stroke="#00ff41" stroke-width="3" stroke-dasharray="140 1268" filter="url(#glowS)"/>
+</svg>

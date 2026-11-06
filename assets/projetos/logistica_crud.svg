@@ -1,37 +1,96 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 190" width="400" height="190" role="img" aria-label="Projeto logistica_crud: Sistema de logística com CRUD web e relatórios com JOINs.">
-<defs>
-  <filter id="glow" x="-20%" y="-50%" width="140%" height="200%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 350" width="270" height="350" role="img" aria-label="Projeto logistica_crud: Sistema de logística com CRUD web e relatórios com JOINs."><defs>
+  <radialGradient id="bgg" cx="50%" cy="35%" r="80%">
+    <stop offset="0" stop-color="#005c25"/>
+    <stop offset=".5" stop-color="#002a11"/>
+    <stop offset="1" stop-color="#000f06"/>
+  </radialGradient>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0H0V22" fill="none" stroke="#00ff41" stroke-opacity=".08"/>
+  </pattern>
+  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse">
+    <rect width="3" height="1" fill="#000" fill-opacity=".22"/>
+  </pattern>
+  <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
+    <stop offset=".5" stop-color="#00ff41" stop-opacity=".09"/>
+    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow" x="-30%" y="-60%" width="160%" height="220%">
     <feGaussianBlur stdDeviation="3" result="b"/>
     <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <filter id="glowS" x="-20%" y="-50%" width="140%" height="200%">
-    <feGaussianBlur stdDeviation="1.6" result="b"/>
+  <filter id="glowS" x="-30%" y="-60%" width="160%" height="220%">
+    <feGaussianBlur stdDeviation="1.5" result="b"/>
     <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
-  <linearGradient id="sweep" x1="0" x2="1">
-    <stop offset="0" stop-color="#00ff41" stop-opacity="0"/>
-    <stop offset=".5" stop-color="#00ff41" stop-opacity=".12"/>
-    <stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
+  <clipPath id="round"><rect width="270" height="350" rx="14"/></clipPath>
+  <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#00ff41" stop-opacity=".55"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/>
   </linearGradient>
-  <clipPath id="round"><rect width="400" height="190" rx="10"/></clipPath>
-</defs>
-<style>
+  <linearGradient id="sweep" x1="0" y1="1" x2="1" y2="0">
+    <stop offset="0" stop-color="#00ff41" stop-opacity=".05"/><stop offset="1" stop-color="#00ff41" stop-opacity=".5"/>
+  </linearGradient><clipPath id="iconclip"><rect x="14" y="14" width="242" height="140" rx="10"/></clipPath></defs><style>
   text { font-family: 'Courier New', Courier, monospace; }
-  .t { font-family: Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; font-weight: 700; }
-  .sw { animation: sw 4.5s ease-in-out infinite; }
-  @keyframes sw { from { transform: translateX(-160px); } to { transform: translateX(440px); } }
-  .blink { animation: blink 1.2s steps(1) infinite; }
+  .b { font-family: Consolas, 'SF Mono', Menlo, 'DejaVu Sans Mono', 'Courier New', monospace; font-weight: 700; }
+  .blink { animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
-</style>
+  .scanbar { animation: scan 7s linear infinite; }
+  @keyframes scan { from { transform: translateY(-120px); } to { transform: translateY(350px); } }
+  .run { animation: run 6s linear infinite; }
+  @keyframes run { to { stroke-dashoffset: -1240; } }
+  .spin { transform-box: fill-box; transform-origin: center; animation: spin 8s linear infinite; }
+  .spinr { transform-box: fill-box; transform-origin: center; animation: spin 5s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .show { opacity: 0; animation: appear .2s ease-out forwards; }
+  @keyframes appear { to { opacity: 1; } }
+  .hover { animation: hover 3s ease-in-out infinite; }
+  @keyframes hover { 50% { transform: translateY(-6px); } }
+  .rotor { transform-box: fill-box; transform-origin: center; animation: rotor .18s linear infinite; }
+  @keyframes rotor { 50% { transform: scaleX(.15); } }
+  .beamp { animation: beam 1.6s ease-in-out infinite; }
+  @keyframes beam { 50% { opacity: .35; } }
+  .road { animation: road .6s linear infinite; }
+  @keyframes road { to { stroke-dashoffset: 24; } }
+  .bounce { animation: bounce .5s ease-in-out infinite; }
+  @keyframes bounce { 50% { transform: translateY(-2px); } }
+  .speed { animation: speed .5s steps(2) infinite; }
+  @keyframes speed { 50% { opacity: .3; transform: translateX(-6px); } }
+  .rise { opacity: 0; animation: rise 2.8s ease-out infinite; }
+  @keyframes rise { 0% { opacity: 0; transform: translateY(0); } 20% { opacity: 1; } 100% { opacity: 0; transform: translateY(-34px); } }
+  .pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-out infinite; }
+  @keyframes pulse { from { transform: scale(.8); opacity: .9; } to { transform: scale(1.6); opacity: 0; } }
+  .shackle { animation: lock 3s ease-in-out infinite; }
+  @keyframes lock { 0%,60%,100% { transform: translateY(0); } 75% { transform: translateY(-5px); } }.flip { transform-box: view-box; transform-origin: 135px 0; animation: flip 4s ease-in-out infinite; }@keyframes flip { 0%,35% { transform: scaleX(1); } 65%,100% { transform: scaleX(-1); } }</style>
 <g clip-path="url(#round)">
-  <rect width="400" height="190" fill="#020a04"/>
-  <rect class="sw" x="0" y="0" width="140" height="190" fill="url(#sweep)" transform="skewX(-20)"/>
-  <text x="20" y="30" font-size="12" fill="#006b1b">~/projetos/</text>
-  <text x="380" y="30" font-size="12" fill="#006b1b" text-anchor="end">0000111100</text>
-  <text class="t" x="20" y="60" font-size="21" fill="#00ff41" filter="url(#glowS)">logistica_crud</text>
-  <rect class="blink" x="202" y="44" width="10" height="20" fill="#00ff41"/>
-  <text x="20" y="96" font-size="15" fill="#a8ffbf">Sistema de logística com CRUD</text><text x="20" y="118" font-size="15" fill="#a8ffbf">web e relatórios com JOINs.</text>
-  <rect x="20.0" y="146" width="57.0" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="48.5" y="162" font-size="13" fill="#00ff41" text-anchor="middle">Flask</text><rect x="85.0" y="146" width="96.0" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="133.0" y="162" font-size="13" fill="#00ff41" text-anchor="middle">SQLAlchemy</text><rect x="189.0" y="146" width="57.0" height="24" rx="12" fill="#00ff41" fill-opacity=".08" stroke="#00ff41" stroke-opacity=".6"/><text x="217.5" y="162" font-size="13" fill="#00ff41" text-anchor="middle">MySQL</text>
+  <rect width="270" height="350" fill="url(#bgg)"/><rect width="270" height="350" fill="url(#grid)"/>
+  <rect x="14" y="14" width="242" height="140" rx="10" fill="#000f06" fill-opacity=".6" stroke="#00ff41" stroke-opacity=".3"/>
+  <g clip-path="url(#iconclip)">
+  <line class="road" x1="25" y1="114" x2="245" y2="114" stroke="#00c832" stroke-width="2" stroke-dasharray="14 10"/>
+  <g class="speed" stroke="#00ff41" stroke-width="2" stroke-linecap="round">
+    <line x1="27" y1="64" x2="51" y2="64"/>
+    <line x1="35" y1="78" x2="55" y2="78"/>
+    <line x1="25" y1="92" x2="49" y2="92"/>
+  </g>
+  <g class="bounce">
+    <g fill="#001a0c" stroke="#00ff41" stroke-width="2.5" filter="url(#glowS)">
+      <rect x="65" y="48" width="80" height="50" rx="4"/>
+      <path d="M147 66 H173 L189 82 V98 H147 Z"/>
+    </g>
+    <path d="M155 72 H171 L181 82 H155 Z" fill="#00ff41" fill-opacity=".35"/>
+    <g fill="none" stroke="#00c832" stroke-width="1.6">
+      <rect x="77" y="60" width="24" height="24"/><path d="M77 68 H101 M89 60 V68"/>
+      <rect x="107" y="60" width="24" height="24"/><path d="M107 68 H131 M119 60 V68"/>
+    </g>
+    <g><circle cx="91" cy="102" r="10" fill="#001a0c" stroke="#00ff41" stroke-width="2.5"/><path class="spin" d="M84 102 H98 M91 95 V109" stroke="#00ff41" stroke-width="2"/></g><g><circle cx="165" cy="102" r="10" fill="#001a0c" stroke="#00ff41" stroke-width="2.5"/><path class="spin" d="M158 102 H172 M165 95 V109" stroke="#00ff41" stroke-width="2"/></g>
+  </g></g>
+  <text x="22" y="32" font-size="11" fill="#3ddc6a">02</text>
+  <text x="20" y="180" font-size="12" fill="#3ddc6a">~/projetos/</text>
+  <text class="b" x="20" y="205" font-size="20" fill="#00ff41" filter="url(#glowS)">logistica_crud</text>
+  <rect class="blink" x="194" y="190" width="9" height="18" fill="#00ff41"/>
+  <text x="20" y="232" font-size="14" fill="#c4ffd3">Sistema de logística</text><text x="20" y="252" font-size="14" fill="#c4ffd3">com CRUD web e</text><text x="20" y="272" font-size="14" fill="#c4ffd3">relatórios com JOINs.</text>
+  <rect x="20.0" y="292" width="47.0" height="22" rx="11" fill="#00ff41" fill-opacity=".12" stroke="#00ff41" stroke-opacity=".7"/><text x="43.5" y="307" font-size="11" fill="#00ff41" text-anchor="middle">Flask</text><rect x="73.0" y="292" width="80.0" height="22" rx="11" fill="#00ff41" fill-opacity=".12" stroke="#00ff41" stroke-opacity=".7"/><text x="113.0" y="307" font-size="11" fill="#00ff41" text-anchor="middle">SQLAlchemy</text><rect x="159.0" y="292" width="47.0" height="22" rx="11" fill="#00ff41" fill-opacity=".12" stroke="#00ff41" stroke-opacity=".7"/><text x="182.5" y="307" font-size="11" fill="#00ff41" text-anchor="middle">MySQL</text>
+  <text x="20" y="334" font-size="12" fill="#3ddc6a">&gt; abrir repositório_</text>
+  <rect class="scanbar" width="270" height="120" fill="url(#scan)"/><rect width="270" height="350" fill="url(#lines)"/>
 </g>
-<rect x="1" y="1" width="398" height="188" rx="9" fill="none" stroke="#00ff41" stroke-opacity=".55" stroke-width="2"/>
+<rect x="1" y="1" width="268" height="348" rx="13" fill="none" stroke="#00ff41" stroke-opacity=".45" stroke-width="2"/><rect class="run" x="1" y="1" width="268" height="348" rx="13" fill="none" stroke="#00ff41" stroke-width="3" stroke-dasharray="140 1100" filter="url(#glowS)"/>
 </svg>

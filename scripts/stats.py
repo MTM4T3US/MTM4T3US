@@ -11,7 +11,7 @@ import urllib.request
 from xml.sax.saxutils import escape
 
 API = "https://api.github.com"
-G, G2, G3, SOFT, BG = "#00ff41", "#00b82e", "#006b1b", "#a8ffbf", "#020a04"
+G, G2, G3, SOFT, BG = "#00ff41", "#00c832", "#0a7a2a", "#c4ffd3", "#001a0c"
 MONO = "'Courier New', Courier, monospace"
 
 
@@ -97,7 +97,7 @@ def render(user, s):
         y += lh
         dots = "." * (30 - len(label))
         out.append(f'<text class="show" style="animation-delay:{delay:.2f}s" x="{left + 2 * cw:.1f}" y="{y}" font-size="{fs}">'
-                   f'<tspan fill="{SOFT}">{escape(label)} </tspan><tspan fill="{G3}">{dots}</tspan>'
+                   f'<tspan fill="{SOFT}">{escape(label)} </tspan><tspan fill="#3ddc6a" fill-opacity=".6">{dots}</tspan>'
                    f'<tspan fill="{G}" font-weight="700"> {escape(str(val))}</tspan></text>')
         delay += 0.15
     y += lh + 12
@@ -119,28 +119,35 @@ def render(user, s):
     y += lh + 6
     brasilia = dt.timezone(dt.timedelta(hours=-3))
     stamp = dt.datetime.now(brasilia).strftime("%d/%m/%Y %H:%M (Brasília)")
-    out.append(f'<text x="{left}" y="{y}" font-size="13" fill="{G3}">// atualizado em {stamp}</text>')
+    out.append(f'<text x="{left}" y="{y}" font-size="13" fill="#3ddc6a">// atualizado em {stamp}</text>')
     H = y + 22
+    per = 2 * (W + H)
     return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Estatísticas do GitHub de {escape(user)}">
-<defs><clipPath id="round"><rect width="{W}" height="{H}" rx="12"/></clipPath>
-  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".3"/></pattern></defs>
+<defs><clipPath id="round"><rect width="{W}" height="{H}" rx="14"/></clipPath>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{G}" stroke-opacity=".08"/></pattern>
+  <pattern id="lines" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="1" fill="#000" fill-opacity=".22"/></pattern>
+  <filter id="glowS" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
 <style>
   text {{ font-family: {MONO}; }}
   .show {{ opacity: 0; animation: appear .3s ease-out forwards; }}
   @keyframes appear {{ to {{ opacity: 1; }} }}
   .bar {{ transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: grow 1.2s ease-out forwards; }}
   @keyframes grow {{ to {{ transform: scaleX(1); }} }}
+  .run {{ animation: run 6s linear infinite; }}
+  @keyframes run {{ to {{ stroke-dashoffset: -{per}; }} }}
 </style>
 <g clip-path="url(#round)">
   <rect width="{W}" height="{H}" fill="{BG}"/>
-  <rect width="{W}" height="38" fill="#0b1a0f"/>
-  <line x1="0" y1="38" x2="{W}" y2="38" stroke="{G}" stroke-opacity=".35"/>
-  <circle cx="22" cy="19" r="6" fill="{G}"/><circle cx="42" cy="19" r="6" fill="{G2}"/><circle cx="62" cy="19" r="6" fill="{G3}"/>
-  <text x="{W / 2}" y="24" font-size="14" fill="{G2}" text-anchor="middle">github-stats.sh</text>
+  <rect width="{W}" height="40" fill="#003a17"/>
+  <line x1="0" y1="40" x2="{W}" y2="40" stroke="{G}" stroke-opacity=".5"/>
+  <circle cx="22" cy="20" r="6" fill="{G}"/><circle cx="42" cy="20" r="6" fill="{G2}"/><circle cx="62" cy="20" r="6" fill="{G3}"/>
+  <text x="{W / 2}" y="25" font-size="14" fill="#3ddc6a" text-anchor="middle">github-stats.sh</text>
+  <rect y="40" width="{W}" height="{H}" fill="url(#grid)"/>
   {''.join(out)}
   <rect width="{W}" height="{H}" fill="url(#lines)"/>
 </g>
-<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="11" fill="none" stroke="{G}" stroke-opacity=".55" stroke-width="2"/>
+<rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="13" fill="none" stroke="{G}" stroke-opacity=".45" stroke-width="2"/>
+<rect class="run" x="1" y="1" width="{W - 2}" height="{H - 2}" rx="13" fill="none" stroke="{G}" stroke-width="3" stroke-dasharray="140 {per - 140}" filter="url(#glowS)"/>
 </svg>"""
 
 
